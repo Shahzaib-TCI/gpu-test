@@ -1,9 +1,10 @@
-language: php
-php: 7.4
-script:
-  - php -version
-  - node -v
-  - npm -v
-  - echo "testing..."
+os: linux
+dist: focal
+language: python
+
+branches:
+  only:
+  - main
+
 import:
   - gpu.yml
