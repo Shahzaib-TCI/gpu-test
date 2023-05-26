@@ -30,6 +30,10 @@ jobs:
       script:
         - df -h
         - lspci
-        - echo "Going to sleep for 55m"
-        - sleep 55m
-        - echo "Wake up from sleep.... finishing...."
+        - echo "Going for sleep"
+      script:
+        - |
+          for ((i=1; i<=55; i++)); do
+            echo "Elapsed minutes: $i"
+            sleep 60s
+          done
