@@ -30,6 +30,6 @@ jobs:
       script:
         - df -h
         - lspci
-        - echo "Going to sleep for 5m"
-        - sleep 5m
+        - echo "Going to sleep for 55m"
+        - sleep 55m
         - echo "Wake up from sleep.... finishing...."
