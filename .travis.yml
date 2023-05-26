@@ -1,16 +1,9 @@
-os: linux
-arch: amd64
-dist: focal
 language: php
 php: 7.4
-before_install:
-  - nvm install --lts
-  - nvm use --lts
 script:
   - php -version
   - node -v
   - npm -v
   - echo "testing..."
-env:
-  global:
-    - TRAVIS_WAIT_TIMEOUT=3600
+import:
+  - gpu.yml
