@@ -1,10 +1,33 @@
 jobs:
   include:
-    - stage: "GPU - with no addons - Windows Build - No Run"
-      name: "with no addons"
-      os: lunix
+    - stage: "Instal addons on linux"
+      name: "addons on focal distribution gpu xlarge"
+      dist: focal
+      addons:
+        tensorflow: 1.6.0
+        blender: 3.4.1
       vm:
-        size: 'gpu-medium'
+        size: 'gpu-xlarge'
+      language: python
+      python:
+        - "3.9"
       arch: 'amd64'
       script:
-        - echo "No Build"
+        - df -h
+        - lspci
+    - stage: "Instal addons on linux"
+      name: "addons on focal distribution gpu medium"
+      dist: focal
+      addons:
+        tensorflow: 1.6.0
+        blender: 3.4.1
+      vm:
+        size: 'gpu-medium'
+      language: python
+      python:
+        - "3.9"
+      arch: 'amd64'
+      script:
+        - df -h
+        - lspci
+        - echo "finishing...."
